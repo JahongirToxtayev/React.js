@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import  "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import  {UseStateda} from "./components/useState/useState";
 
-function App() {
+import React from 'react'
+import { CheckLogin } from './components/loginniTekshirish/checkLogin';
+import { KeyApi } from './components/KeyApi/KeyApi';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <UseStateda/> */}
+      {/* <CheckLogin/> */}
+      <KeyApi/>
     </div>
-  );
+    
+  )
 }
 
-export default App;
+export default App

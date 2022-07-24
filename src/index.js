@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import App from './App';
-import { KeyApi } from './components/KeyApi/KeyApi';
-import { More } from './components/KeyApi/more';
+import { Main } from './components/alohidaPage/main';
+import {About} from './components/alohidaPage/about'
+import  "bootstrap/dist/css/bootstrap.min.css";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,8 +12,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
 <Routes>
-  <Route path='/' element={<KeyApi/>}/>
-  <Route path='/keyapi/:id' element={<More/>}/>
+  <Route path='/' element={<Main/>}/>
+  <Route path='/about/:id' element={<About/>}/>
   {/* <Route path='/' element={<Home/>}/> */}
 
 </Routes>

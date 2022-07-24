@@ -1,5 +1,4 @@
 import './App.css';
-import  "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import  {UseStateda} from "./components/useState/useState";
 
 import React from 'react'
@@ -11,7 +10,7 @@ const App = () => {
     <div>
       {/* <UseStateda/> */}
       {/* <CheckLogin/> */}
-      <KeyApi/>
+      {/* <KeyApi/> */}
     </div>
     
   )

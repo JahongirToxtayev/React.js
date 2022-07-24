@@ -13,10 +13,9 @@ export const KeyApi = () => {
     setApidata(qiymat.data.results)
   })
   .catch(function (error) {
-    
+    console.log("eorrroe");
   });
       }, [])
-      console.log(apidata);
 
   return (
     <div>

@@ -1,13 +1,37 @@
 .movie-image{
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
+    width: 100%;
 }
-/* .movie2-image{
-  
-    
-} */
-.card2{
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap');
+.circle-title h5{
+    font-family: 'Clicker Script', cursive;
+    font-weight: 700;
+    font-size: 33px;
+}
+.vertical-position{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.like-btn{
     border: none;
-    height: 300px;
-    border-radius: 24px !important;
+    background-color: white;
+}
+.card{
+    border: none !important;
+    height: 350px;
+    border-radius: 24px !important ;
+}
+.movie2-image{
+    border-radius: 20px;
+}
+.general-card{
+    border-radius: 20px;
+}
+.circle{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(230, 106, 18);
 }

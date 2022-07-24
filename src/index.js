@@ -7,13 +7,17 @@ import {About} from './components/alohidaPage/about'
 import  "bootstrap/dist/css/bootstrap.min.css";
 
 
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
 <Routes>
+  {/* <Route path='/' element={<Main/>}/> */}
   <Route path='/' element={<Main/>}/>
-  <Route path='/about/:id' element={<About/>}/>
+
+  <Route path='/about/:id' element={<About/>}/> 
   {/* <Route path='/' element={<Home/>}/> */}
 
 </Routes>

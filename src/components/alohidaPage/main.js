@@ -27,6 +27,7 @@ export const Main = () => {
     
     function Like() {
         setlike(!like)
+    
     }
     
   return (
@@ -35,6 +36,7 @@ export const Main = () => {
             <div className="row">
                 {
                     Apidata.map((v,i)=>{
+                        console.log(i);
                         return <div className="col-3 my-5" key={i}>
             <div className="card shadow card2">
                 <img className='movie-image' src={`https://image.tmdb.org/t/p/original${v.backdrop_path}`} alt="" />

@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Main } from './components/alohidaPage/main';
-import {About} from './components/alohidaPage/about'
+// import { Main } from './components/alohidaPage/main';
+// import {About} from './components/alohidaPage/about'
 import  "bootstrap/dist/css/bootstrap.min.css";
+import { Main } from './components/1-Imtihon React/main';
 
 
 
@@ -17,7 +18,7 @@ root.render(
   {/* <Route path='/' element={<Main/>}/> */}
   <Route path='/' element={<Main/>}/>
 
-  <Route path='/about/:id' element={<About/>}/> 
+  {/* <Route path='/about/:id' element={<About/>}/>  */}
   {/* <Route path='/' element={<Home/>}/> */}
 
 </Routes>

@@ -10,6 +10,7 @@ export const Main = () => {
     const [data, setData] = useState([])
     // const [defaultValue, setdefaultValue] = useState(" ")
     const [korzina, setkorzina] = useState([])
+    const [inputValue, setinputValue] = useState("")
 
     useEffect(() => {
         axios.get(`http://myjson.dit.upm.es/api/bins/5pha`)
@@ -30,9 +31,13 @@ const Like = (v, i) => {
         vaqtincha[i].like = !v;
         setData(vaqtincha)
 
-        console.log(data[i].like);
+    
     }
-
+    const korzinaFnc=(i)=>{
+        let a=[]
+        a.push(data[i])
+        setkorzina(a)
+    }
      
     //   const handleChange = event => {
     //     setdefaultValue(event.target.value);
@@ -48,7 +53,13 @@ const Like = (v, i) => {
     //       console.log(results);
     //  }, [])
      
-     
+    const Filtering=(soz)=>{
+        setinputValue(soz)
+        let FilteringData =data.filter(a=>{
+            return a.name.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase())
+        })
+        setData(FilteringData)
+    }
 
   return (
     <div>
@@ -58,13 +69,13 @@ const Like = (v, i) => {
         <h2 className="qpick">QPICK</h2>
         </div>
         <div className="input d-flex justify-content-around" >
-        <input type="text" className="form-control h-75" placeholder="Search" />
+        <input type="text" className="form-control h-75" placeholder="Search" onInput={(v)=>Filtering(v.target.value)}/>
     </div>
     <div className="like-trash_icons">
         <button className="like-btn position-relative btn btn-light mx-2">
             <AiFillHeart className='fs-3'/>
             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                0
+                {data.length}
                 <span className="visually-hidden">unread messages</span>
               </span>
         </button>
@@ -115,7 +126,7 @@ const Like = (v, i) => {
                                             </button>            </div>
             </div>
             <div className="purchase-btn d-flex justify-content-center">
-            <button className="btn btn-warning mb-3 purchase" onClick={()=>setkorzina(data[i])}>Purchase</button>
+            <button className="btn btn-warning mb-3 purchase" onClick={()=>korzinaFnc(i)}>Purchase</button>
         </div>
         </div>
         </div>

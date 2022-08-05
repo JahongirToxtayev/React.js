@@ -20,9 +20,9 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
 
   const axios = require('axios').default;
   useEffect(() => {
-    axios.get('http://myjson.dit.upm.es/api/bins/hyzq')
+    axios.get('http://myjson.dit.upm.es/api/bins/agxi')
   .then(function (response) {
-    const action={type:"All_Data",payload:response.data}
+    const action={type:"All_DATA",payload:response.data}
     dispatch(action)
   })
   .catch(function (error) {
@@ -32,21 +32,16 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
   }, [])
   
   const Add=()=>{
-    const action={type:"Input_data",payload:{FirstName:Bir,LastName:Ikki,Age:Uch}}
+    const action={type:"Input_data",payload:{FirstName:Bir,LastName:Ikki,Age:Uch,Like:false}}
     dispatch(action)
   }
 
-  const Like=(v,i)=>{
-    let like=[...source]
-    like[i].Like=!v
-    console.log("Likeman",source);
-    const action={type:"Like",payload:like}
+  const Like=(i)=>{
+    const action={type:"Like",payload:i}
     dispatch(action)
   }
   const Del=(i)=>{
-    let del=[...source]
-    del.splice(i,1)
-    const action={type:"Del",payload:del}
+    const action={type:"Del",payload:i}
     dispatch(action)
   }
   
@@ -89,12 +84,12 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
           </p>
         </div>
         <div className="col-3 row d-flex align-items-center">
-          <button className='btn col-5' onClick={()=>{Like(v.Like,i)}}>
+          <button className='btn col-5' onClick={()=>{Like(i)}}>
           <span className={`${(v.Like) ? "d-block text-danger" : "d-none"} fs-3 mb-3`}> <AiFillHeart /></span>
           <span className={`${(v.Like) ? "d-none" : "d-block text-dark"} fs-3 mb-3`}> <AiOutlineHeart /></span>
           </button>
           <button className='btn col-5'>
-            <p className='fs-3 text-primary' onClick={Del(i)}><RiDeleteBin5Fill/></p>
+            <p className='fs-3 text-primary' onClick={()=>{Del(i)}}><RiDeleteBin5Fill/></p>
           </button>
         </div>
       </div>

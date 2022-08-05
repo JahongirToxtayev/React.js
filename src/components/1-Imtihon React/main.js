@@ -96,8 +96,8 @@ const Like = (v, i) => {
 
     {
         data.map((v,i)=>{
-            return <div className="col-lg-4 col-md-6 col-sm-12 my-4">
-            <div className="card my-4 shadow">
+            return <div className="col-lg-4 col-md-6 col-sm-12 my-4" key={i}>
+            <div className="card my-4 shadow" >
             <div className="image-div d-flex justify-content-center">
         <img src={v.img} alt="" className="product-image"/>
     </div>

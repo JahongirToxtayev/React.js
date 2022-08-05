@@ -3,7 +3,7 @@ const initialState=[]
 const Reducer=(state=initialState,action)=>{
 
 switch (action.type) {
-        case "All_Data" :
+        case "All_DATA" :
         return action.payload
         
         case "Input_data" :
@@ -12,7 +12,14 @@ switch (action.type) {
         return a
 
         case "Like" :
-        return action.payload
+        let b=[...state]
+        b[action.payload].Like=!b[action.payload].Like
+        return b
+
+        case "Del" :
+        let del=[...state]
+        del.splice(action.payload,1)
+        return del
         
 
     default:

@@ -25,8 +25,10 @@ export const Main = () => {
       
     }, [])
     
-    function Like() {
-        setlike(!like)
+    function Like(i) {
+        let vaqtincha=[...Apidata]
+        vaqtincha[i].like=!vaqtincha[i].like
+        setApidata(vaqtincha)
     
     }
     
@@ -37,15 +39,15 @@ export const Main = () => {
                 {
                     Apidata.map((v,i)=>{
                         console.log(i);
-                        return <div className="col-3 my-5" key={i}>
+                        return <div className="col-4 my-5" key={i}>
             <div className="card shadow card2">
                 <img className='movie-image' src={`https://image.tmdb.org/t/p/original${v.backdrop_path}`} alt="" />
                 <div className="body-card">
                     <div className="vertical-position mx-3">
                     <h3 className='text-center'>{v.title}</h3>
                     <div className="like-more_btn d-flex justify-content-between mx-3">
-                        <button className='like-btn' onClick={Like}><p className={`fs-4 text-danger ${like ? "d-none": "a"}`}>{<AiOutlineHeart/>}</p>
-                        <p className={`fs-4 text-danger ${!like ? "d-none" :"a"}`}>{<AiFillHeart/>} </p> </button>
+                        <button className='like-btn' onClick={()=>Like(i)}><p className={`fs-4 text-danger ${like ? "d-none": "d-block"}`}>{<AiOutlineHeart/>}</p>
+                        <p className={`fs-4 text-danger ${!like ? "d-none" :"d-block"}`}>{<AiFillHeart/>} </p> </button>
                         
                     <Link to={`/about/${v.id}`} className="btn btn-warning fs-5 text-center h-50">More</Link>
                     </div>
